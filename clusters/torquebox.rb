@@ -30,13 +30,16 @@ Ironfan.cluster 'torquebox' do
   role                  :tuning,        :last
 
   facet :backend do
-    instances           1
+    instances           2
 
     role                :torquebox
   end
 
-  # facet :frontend do
-  # end
+  facet :frontend do
+    instances           1
+
+    role                :mod_cluster
+  end
 
   cluster_role.override_attributes({
     })
@@ -44,6 +47,15 @@ Ironfan.cluster 'torquebox' do
   facet(:backend).facet_role.override_attributes({
     :torquebox => {
       :bind_ip => ["cloud", "local_ipv4"],
+      :clustered => true,
+      :mod_cluster_mcpm_port => 6666
+      }
+    })
+
+    facet(:frontend).facet_role.override_attributes({
+    :mod_cluster => {
+      :mcpm_bind_ip => ["cloud", "local_ipv4"],
+      :mcpm_port => 6666,
       :clustered => true
       }
     })
