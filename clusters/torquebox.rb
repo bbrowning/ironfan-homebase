@@ -42,6 +42,9 @@ Ironfan.cluster 'torquebox' do
     })
 
   facet(:backend).facet_role.override_attributes({
-      :torquebox => { :bind_ip => ["cloud", "local_ipv4"] }
+    :torquebox => {
+      :bind_ip => ["cloud", "local_ipv4"],
+      :clustered => true
+      }
     })
 end
