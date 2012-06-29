@@ -6,7 +6,7 @@ Ironfan.cluster 'torquebox' do
     defaults
     permanent           false
     availability_zones ['us-east-1d']
-    flavor              't1.micro'
+    flavor              'm1.large'
     backing             'ebs'
     image_name          'oneiric'
     bootstrap_distro    'ubuntu11.10-ironfan'
