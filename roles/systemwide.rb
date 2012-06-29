@@ -12,6 +12,6 @@ run_list *%w[
 default_attributes({
   :java        => { # use openjdk
     :install_flavor => 'openjdk',
-    :jdk_version => 6
+    :jdk_version => 7
   },
 })
