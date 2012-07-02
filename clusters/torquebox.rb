@@ -52,7 +52,7 @@ Ironfan.cluster 'torquebox' do
       }
     })
 
-    facet(:frontend).facet_role.override_attributes({
+  facet(:frontend).facet_role.override_attributes({
     :mod_cluster => {
       :mcpm_bind_ip => ["cloud", "local_ipv4"],
       :mcpm_port => 6666,
