@@ -1,7 +1,7 @@
 #
 # TorqueBox cluster
 #
-INCREMENTAL_BUILD_NUMBER=18
+INCREMENTAL_BUILD_NUMBER=1114
 Ironfan.cluster 'torquebox_incremental' do
   cloud(:ec2) do
     defaults
@@ -50,7 +50,7 @@ Ironfan.cluster 'torquebox_incremental' do
       :bind_ip => ["cloud", "local_ipv4"],
       :clustered => true,
       :mod_cluster_mcpm_port => 6666,
-      :url => "http://repository-projectodd.forge.cloudbees.com/incremental/torquebox-2.0.x/#{INCREMENTAL_BUILD_NUMBER}/torquebox-dist-bin.zip",
+      :url => "http://torquebox.org/2x/builds/#{INCREMENTAL_BUILD_NUMBER}/torquebox-dist-bin.zip",
       :checksum => nil,
       :version => "2.x.incremental.#{INCREMENTAL_BUILD_NUMBER}",
       :ha_server_config_template => "standalone-ha-2.0.x-incremental.xml.erb"
